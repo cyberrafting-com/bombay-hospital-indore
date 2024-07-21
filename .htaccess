@@ -1,0 +1,166 @@
+<Files ~ "^.*\.([Ee][Nn][Vv])">
+ order allow,deny
+ deny from all
+ satisfy all
+</Files>
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+    
+    RewriteRule ^appointment/.*$ - [PT]
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Redirect 301  /bmw https://www.bombayhospitalindore.com/bmw
+
+Redirect 301 /contact-us https://www.bombayhospitalindore.com/contact
+
+Redirect 301 /important-telephone-numbers https://www.bombayhospitalindore.com/in-patient-guide/important-telephone-numbers
+Redirect 301 /anatomy-of-female-pelvic-area https://www.bombayhospitalindore.com/health-education/gynecology-and-obstetrics/female-pelvic-area
+Redirect 301 /cath-lab https://www.bombayhospitalindore.com/services/diagnostic/cath-lab
+Redirect 301 /founder https://www.bombayhospitalindore.com/about/founders
+
+Redirect 301 /consultants https://www.bombayhospitalindore.com/panel-of-consultants
+Redirect 301 /admission-procedures https://www.bombayhospitalindore.com/in-patient-guide/admission-procedures
+Redirect 301 /surgical-oncology-medical-oncology https://www.bombayhospitalindore.com/services/surgical/surgical-oncology
+Redirect 301 /hospital-location https://www.bombayhospitalindore.com/about/hospital-location
+
+Redirect 301 /urology https://www.bombayhospitalindore.com/services/surgical/urology
+# Redirect 301 /bmw https://www.bombayhospitalindore.com/bmw
+Redirect 301 /murlidhar-mundra https://www.bombayhospitalindore.com/patient-stories/mr-murlidhar
+Redirect 301 /paediatrics https://www.bombayhospitalindore.com/services/medical/paediatrics
+Redirect 301 /nephrology https://www.bombayhospitalindore.com/services/medical/nephrology
+
+Redirect 301 /lithotripsy https://www.bombayhospitalindore.com/services/therapeutic/lithotripsy
+Redirect 301 /founder https://www.bombayhospitalindore.com/about/founders
+Redirect 301 /about-hospital https://www.bombayhospitalindore.com/about/history
+Redirect 301 /photo_gallery https://www.bombayhospitalindore.com/photo-gallery
+Redirect 301 /basic-anatomy-of-the-heart https://www.bombayhospitalindore.com/health-education/cardiology/basic-anatomy-of-heart
+
+Redirect 301 /overview-of-nervous-system-disorders https://www.bombayhospitalindore.com/health-education/neurology-neurosurgery/overview-nervous-system
+
+Redirect 301 /billing https://www.bombayhospitalindore.com/in-patient-guide/billing
+Redirect 301 /ultrasound https://www.bombayhospitalindore.com/services/diagnostic/ultrasound
+
+Redirect 301 /admission https://www.bombayhospitalindore.com/services/round-the-clock/admission
+Redirect 301 /mediclaim https://www.bombayhospitalindore.com/in-patient-guide/insurance-and-mediclaim
+
+Redirect 301 /admissions https://www.bombayhospitalindore.com/services/round-the-clock/admission
+Redirect 301 /path_lab https://www.bombayhospitalindore.com/services/round-the-clock/path-lab
+
+Redirect 301 /cardiology https://www.bombayhospitalindore.com/services/medical/cardiology
+Redirect 301 /neurosurgery https://www.bombayhospitalindore.com/services/surgical/neurosurgery
+Redirect 301 /neurology https://www.bombayhospitalindore.com/services/medical/neurology
+
+Redirect 301 /nabh https://www.bombayhospitalindore.com/
+Redirect 301 /awards https://www.bombayhospitalindore.com/
+Redirect 301 /hysterectomy https://bombayhospitalindore.com/health-education/gynecology-and-obstetrics/hysterectomy
+
+Redirect 301 /ecg_echo_stress_holter https://www.bombayhospitalindore.com/services/diagnostic/ecg
+Redirect 301 /gastroenterology https://www.bombayhospitalindore.com/services/medical/gastroentrology
+Redirect 301 /dietician https://www.bombayhospitalindore.com/services/therapeutic/dietician-and-nutrition-clinic
+
+Redirect 301 /pharmacy https://www.bombayhospitalindore.com/services/round-the-clock/pharmacy
+Redirect 301 /examination https://www.bombayhospitalindore.com/health-education/neurology-neurosurgery/neurological-examination
+Redirect 301 /orthopedics https://www.bombayhospitalindore.com/services/surgical/orthopaedics
+
+Redirect 301 /careers https://www.bombayhospitalindore.com/
+Redirect 301 /mri https://www.bombayhospitalindore.com/services/diagnostic/mri
+Redirect 301 /meals https://www.bombayhospitalindore.com/in-patient-guide/meals
+
+Redirect 301 /statistics https://www.bombayhospitalindore.com/health-education/cardiology/statistics
+Redirect 301 /xray https://www.bombayhospitalindore.com/services/diagnostic/xray
+Redirect 301 /insurancemediclaim https://www.bombayhospitalindore.com/in-patient-guide/insurance-and-mediclaim
+
+Redirect 301 /pathology https://www.bombayhospitalindore.com/services/diagnostic/pathology
+Redirect 301 /contact-us https://www.bombayhospitalindore.com/contact
+
+Redirect 301 /eeg-emg https://www.bombayhospitalindore.com/services/diagnostic/eeg
+Redirect 301 /visiting-hours https://www.bombayhospitalindore.com/in-patient-guide/visiting-hours
+
+Redirect 301 /neurological-disorders https://www.bombayhospitalindore.com/health-education/neurology-neurosurgery/neurological-disorders
+Redirect 301 /general-medicine https://www.bombayhospitalindore.com/services/medical/general-medicine
+
+Redirect 301 /1356-2 https://www.bombayhospitalindore.com/
+Redirect 301 /kantilalji-jain https://www.bombayhospitalindore.com/patient-stories/mr-kantilal
+Redirect 301 /parvati-varma https://www.bombayhospitalindore.com/patient-stories/mrs-parvati
+Redirect 301 /cardiology-2 https://www.bombayhospitalindore.com/services/medical/cardiology
+Redirect 301 /our-inspiration https://www.bombayhospitalindore.com/
+Redirect 301 /arun-biswas https://www.bombayhospitalindore.com/
+
+Redirect 301 /neena-solanki https://www.bombayhospitalindore.com/patient-stories/mrs-neena
+Redirect 301 /neurological-examination https://www.bombayhospitalindore.com/health-education-neurology
+Redirect 301 /health-education https://www.bombayhospitalindore.com/services/health-library/health-education
+
+Redirect 301 /urodynamic-lab https://www.bombayhospitalindore.com/
+Redirect 301 /diagnostic-facilities https://www.bombayhospitalindore.com/services/diagnostic/blood-transfusion-service
+Redirect 301 /yatindra-jain https://www.bombayhospitalindore.com/patient-stories/mr-yatindra
+
+Redirect 301 /emergency-casualty https://www.bombayhospitalindore.com/services/round-the-clock/emergency-and-casualty
+Redirect 301 /histopathology-department https://www.bombayhospitalindore.com/services/diagnostic/histopathology
+Redirect 301 /mrs-urmila-choudhary https://www.bombayhospitalindore.com/
+
+Redirect 301 /neonatology-and-intensive-pediatrics https://www.bombayhospitalindore.com/services/medical/neonatology
+Redirect 301 /history https://www.bombayhospitalindore.com/about/history
+Redirect 301 /physiotherapy https://www.bombayhospitalindore.com/services/therapeutic/physiotherapy
+Redirect 301 /health-tips https://www.bombayhospitalindore.com/services/health-library/health-tips
+
+Redirect 301 /author/admin https://www.bombayhospitalindore.com/
+Redirect 301 /medical-tourism https://www.bombayhospitalindore.com/
+Redirect 301 /room-facilities https://www.bombayhospitalindore.com/in-patient-guide/room-facilities
+Redirect 301 /bherulal-gupta https://www.bombayhospitalindore.com/patient-stories/mr-bherulal
+
+# redirect shraddha/ url redirect
+Redirect 301 https://uc.cyberrafting.com/shraddha/bombay-hospital-indore1/career https://uc.cyberrafting.com/spm/bombay-hospital-indore1/career
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_flag display_errors On
+   php_value max_execution_time 30
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 2084M
+   php_value post_max_size 8M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php81"
+   php_value upload_max_filesize 2M
+   php_flag zlib.output_compression Off
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors On
+   php_value max_execution_time 30
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 2084M
+   php_value post_max_size 8M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php81"
+   php_value upload_max_filesize 2M
+   php_flag zlib.output_compression Off
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php81” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
