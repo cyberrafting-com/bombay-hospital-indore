@@ -735,6 +735,10 @@ Route::get('/career/associate-consultant', [HospitalController::class , 'career'
 Route::post('store', [HospitalController::class,'store'])->name('store');
 
 
+Route::get('/career/associate-consultant', [HospitalController::class , 'career'])->name('associate-consultant');
+Route::post('store', [HospitalController::class,'store'])->name('store');
+
+
 // Add this route to fetch and display data
 // Route::get('show', [HospitalController::class, 'show'])->name('show');
 
