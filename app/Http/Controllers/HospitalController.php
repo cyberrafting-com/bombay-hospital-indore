@@ -13,6 +13,67 @@ class HospitalController extends Controller
         return view('associate-consultant');
     }
 
+
+        //2
+        public function rmoData()
+        {
+            return view('associate-consultant');
+        }
+    
+    
+        //3
+        public function medicalAdministrator()
+        {
+            return view('medical-administrator');
+        } 
+        
+    
+        //4
+        public function medicalOncologist()
+        {
+            return view('medical-oncologist');
+        } 
+        
+        //5
+        public function surgicalOncologist()
+        {
+            return view('surgical-oncologist');
+        } 
+        
+    
+        //6
+        public function radioTherapist()
+        {
+            return view('radio-therapist');
+        } 
+        
+    
+        //7
+        public function pediatrician()
+        {
+            return view('pediatrician');
+        } 
+        
+    
+        //8
+        public function giSurgeon()
+        {
+            return view('g-i-surgeon');
+        }
+    
+        //9
+        public function intensivist()
+        {
+            return view('intensivist');
+        } 
+        
+        //10
+        public function medicalOfficers()
+        {
+            return view('junior-resident-medical-officers');
+        } 
+        
+
     public function store(Request $request)
     {
         // Validate the request data
@@ -64,8 +125,6 @@ class HospitalController extends Controller
             'hsc_position' => 'nullable|string',
             'hsc_attempt' => 'nullable|string',
             
-
-
             // Details of UG Entrance Examination
             'ug_college' => 'nullable|string',
             'ug_university' => 'nullable|string',
@@ -121,6 +180,32 @@ class HospitalController extends Controller
             'fellowship_percentage' => 'nullable|numeric|regex:/^\d*(\.\d{1,2})?$/',
             'fellowship_position' => 'nullable|string',
             'fellowship_attempt' => 'nullable|string',
+
+             // MBBS/BHMS/BDS
+            'mbbs_bhms_bds_college' => 'nullable|string',
+            'mbbs_bhms_bds_university' => 'nullable|string',
+            'mbbs_bhms_bds_year' => 'nullable|digits:4|integer|between:1960,' . date('Y'),
+            'mbbs_bhms_bds_percentage' => 'nullable|numeric|regex:/^\d*(\.\d{1,2})?$/',
+            'mbbs_bhms_bds_position' => 'nullable|string',
+            'mbbs_bhms_bds_attempt' => 'nullable|string',
+
+            // Master’s Degree
+            'masters_degree_college' => 'nullable|string',
+            'masters_degree_university' => 'nullable|string',
+            'masters_degree_year' => 'nullable|digits:4|integer|between:1960,' . date('Y'),
+            'masters_degree_percentage' => 'nullable|numeric|regex:/^\d*(\.\d{1,2})?$/',
+            'masters_degree_position' => 'nullable|string',
+            'masters_degree_attempt' => 'nullable|string',
+
+            //  Other Certifications
+            'other_certifications_college' => 'nullable|string',
+            'other_certifications_university' => 'nullable|string',
+            'other_certifications_year' => 'nullable|digits:4|integer|between:1960,' . date('Y'),
+            'other_certifications_percentage' => 'nullable|numeric|regex:/^\d*(\.\d{1,2})?$/',
+            'other_certifications_position' => 'nullable|string',
+            'other_certifications_attempt' => 'nullable|string',
+
+
             ];
 
         $messages = [
@@ -242,7 +327,35 @@ class HospitalController extends Controller
         $data->save();
 
         // Create EducationDetail records
-        $educationLevels = ['ssc', 'hsc', 'ug', 'mbbs', 'pg', 'md_ms_dnb', 'ss', 'dm_mch_dnb', 'fellowship'];
+        // $educationLevels = ['ssc', 'hsc', 'ug', 'mbbs', 'pg', 'md_ms_dnb', 'ss', 'dm_mch_dnb', 'fellowship', 'mbbs_bhms_bds' , 'masters_degree' , 'other_certifications'];
+
+        $educationLevels = [];
+        $routeName = $request->route()->getName();
+        
+        switch ($routeName) {
+            case 'store':
+                $educationLevels = ['ssc', 'hsc', 'ug', 'mbbs', 'pg', 'md_ms_dnb', 'ss', 'dm_mch_dnb', 'fellowship'];
+                break;
+            case 'rmo-data':
+                $educationLevels = ['ssc', 'hsc', 'mbbs', 'md_ms_dnb'];
+                break;
+            case 'administrator':
+                $educationLevels = ['ssc', 'hsc', 'ug','mbbs_bhms_bds', 'masters','other_certification'];
+                break;
+            case 'medical_oncologist':
+            case 'surgical-data':
+            case 'radio':
+            case 'pediatrician-data':
+            case 'surgeonData':
+            case 'intensivist-data':
+            case 'medical_officers_data':
+                $educationLevels = ['ssc', 'hsc', 'mbbs','md_ms_dnb'];
+                break;
+            default:
+                break;
+        }
+        
+
 
         foreach ($educationLevels as $level) {
             $validatedData = array_merge([
@@ -273,10 +386,41 @@ class HospitalController extends Controller
          // Fetch the stored data
  $personalInformation = PersonalInformation::with('educationDetails')->find($data->id);
 
+
  // Return a view with the fetched data
- return view('submitted-data', [
-    'personal_information' => $personalInformation,
-]);
+ 
+ if ($request->route()->named('store')) {
+    return view('submitted-data', ['personal_information' => $personalInformation]);
+}
+elseif ($request->route()->named('rmoFrom')) {
+    return view('submitted-rmo', ['personal_information' => $personalInformation]);
+}
+ elseif ($request->route()->named('administrator')) {
+     return view('submitted-administrator', ['personal_information' => $personalInformation]);
+ }
+elseif ($request->route()->named('medical_oncologist')) {
+    return view('submitted-medicalOncologist', ['personal_information' => $personalInformation]);
+}
+ elseif ($request->route()->named('surgical-data')) {
+     return view('submitted-surgical', ['personal_information' => $personalInformation]);
+}
+elseif ($request->route()->named('radio')) {
+    return view('submitted-radio', ['personal_information' => $personalInformation]);
+}
+  elseif ($request->route()->named('pediatrician-data')) {
+      return view('submitted-pediatrician', ['personal_information' => $personalInformation]);
+  }
+
+  elseif ($request->route()->named('surgeonData')) {
+      return view('submitted-giSurgeon', ['personal_information' => $personalInformation]);    
+   }
+ elseif ($request->route()->named('intensivist-data')) {
+     return view('submitted-intensivist', ['personal_information' => $personalInformation]);
+ }
+elseif ($request->route()->named('medical_officers_data')) {
+    return view('submitted-medicalOfficers', ['personal_information' => $personalInformation]); 
+}
+
 
 
         // Uncomment to debug

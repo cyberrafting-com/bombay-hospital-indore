@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HospitalController;
+use App\Http\Controllers\TodoListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -735,8 +736,40 @@ Route::get('/career/associate-consultant', [HospitalController::class , 'career'
 Route::post('store', [HospitalController::class,'store'])->name('store');
 
 
-Route::get('/career/associate-consultant', [HospitalController::class , 'career'])->name('associate-consultant');
-Route::post('store', [HospitalController::class,'store'])->name('store');
+Route::get('/career/rmo', [HospitalController::class , 'rmoData'])->name('rmo');
+Route::post('/rmoFrom', [HospitalController::class,'store'])->name('rmoFrom');
+
+
+Route::get('/career/medical-administrator', [HospitalController::class , 'medicalAdministrator'])->name('medical-administrator');
+Route::post('/administrator', [HospitalController::class,'store'])->name('administrator');
+
+
+Route::get('/career/medical-oncologist', [HospitalController::class , 'medicalOncologist'])->name('medical-oncologist');
+Route::post('/medical_oncologist', [HospitalController::class,'store'])->name('medical_oncologist');
+
+
+Route::get('/career/surgical-oncologist', [HospitalController::class , 'surgicalOncologist'])->name('surgical-oncologist');
+Route::post('/surgical-data', [HospitalController::class,'store'])->name('surgical-data');
+
+
+Route::get('/career/radio-therapist', [HospitalController::class , 'radioTherapist'])->name('radio-therapist');
+Route::post('/radio', [HospitalController::class,'store'])->name('radio');
+
+
+Route::get('/career/pediatrician', [HospitalController::class , 'pediatrician'])->name('pediatrician');
+Route::post('/pediatrician-data', [HospitalController::class,'store'])->name('pediatrician-data');
+
+
+Route::get('/career/g-i-surgeon', [HospitalController::class , 'giSurgeon'])->name('g-i-surgeon');
+Route::post('/surgeonData', [HospitalController::class,'store'])->name('surgeonData');
+
+
+Route::get('/career/intensivist', [HospitalController::class , 'intensivist'])->name('intensivist');
+Route::post('/intensivist-data', [HospitalController::class,'store'])->name('intensivist-data');
+
+
+Route::get('/career/junior-resident-medical-officers', [HospitalController::class , 'medicalOfficers'])->name('junior-resident-medical-officers');
+Route::post('/medical_officers_data', [HospitalController::class,'store'])->name('medical_officers_data');
 
 
 // Add this route to fetch and display data
@@ -750,37 +783,37 @@ Route::post('store', [HospitalController::class,'store'])->name('store');
 
 
 
-Route::get('/career/rmo', function () {
-    return view('rmo');
-})->name('rmo');
+// Route::get('/career/rmo', function () {
+//     return view('rmo');
+// })->name('rmo');
 
-Route::get('/career/medical-oncologist', function () {
-    return view('medical-oncologist');
-})->name('medical-oncologist');
+// Route::get('/career/medical-oncologist', function () {
+//     return view('medical-oncologist');
+// })->name('medical-oncologist');
 
-Route::get('/career/surgical-oncologist', function () {
-    return view('surgical-oncologist');
-})->name('surgical-oncologist');
+// Route::get('/career/surgical-oncologist', function () {
+//     return view('surgical-oncologist');
+// })->name('surgical-oncologist');
 
-Route::get('/career/radio-therapist', function () {
-    return view('radio-therapist');
-})->name('radio-therapist');
+// Route::get('/career/radio-therapist', function () {
+//     return view('radio-therapist');
+// })->name('radio-therapist');
 
-Route::get('/career/pediatrician', function () {
-    return view('pediatrician');
-})->name('pediatrician');
+// Route::get('/career/pediatrician', function () {
+//     return view('pediatrician');
+// })->name('pediatrician');
 
-Route::get('/career/g-i-surgeon', function () {
-    return view('g-i-surgeon');
-})->name('g-i-surgeon');
+// Route::get('/career/g-i-surgeon', function () {
+//     return view('g-i-surgeon');
+// })->name('g-i-surgeon');
 
-Route::get('/career/intensivist', function () {
-    return view('intensivist');
-})->name('intensivist');
+// Route::get('/career/intensivist', function () {
+//     return view('intensivist');
+// })->name('intensivist');
 
-Route::get('/career/junior-resident-medical-officers', function () {
-    return view('junior-resident-medical-officers');
-})->name('junior-resident-medical-officers');
+// Route::get('/career/junior-resident-medical-officers', function () {
+//     return view('junior-resident-medical-officers');
+// })->name('junior-resident-medical-officers');
 
 
 Route::get('/saveItemRoute', [TodoListController::class, 'saveItem'])->name('saveItem');

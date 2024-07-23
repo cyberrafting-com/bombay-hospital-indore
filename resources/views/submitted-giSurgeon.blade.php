@@ -1,58 +1,58 @@
-@php($title = "Career -  Associate Consultant | Bombay Hospital Indore")
+@php($title = 'Career -  Post OF G.I. Surgeon | Bombay Hospital Indore')
 @section('meta_desc') @endsection
 
 @extends('layouts.default')
 @section('content')
 
-<!-- BREADCRUMB -->
-<div id="breadcrumb" class="division">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="breadcrumb-holder">
+    <!-- BREADCRUMB
+                   ============================================= -->
+    <div id="breadcrumb" class="division">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class=" breadcrumb-holder">
 
-                    <!-- Breadcrumb Nav -->
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Career</li>
-                        </ol>
-                    </nav>
+                        <!-- Breadcrumb Nav -->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Career</li>
+                            </ol>
+                        </nav>
 
-                    <!-- Title -->
-                    <h4 class="h4-sm steelblue-color">Career / Associate Consultant</h4>
+                        <!-- Title -->
+                        <h4 class="h4-sm steelblue-color">Career/ G.I. Surgeon</h4>
 
+                    </div>
                 </div>
-            </div>
-        </div> <!-- End row -->
-    </div> <!-- End container -->
-</div> <!-- END BREADCRUMB -->
+            </div> <!-- End row -->
+        </div> <!-- End container -->
+    </div> <!-- END BREADCRUMB -->
 
-<section id="services-7" class="bg-lightgrey wide-70 servicess-section division">
-    <div class="container">
+    <section id="services-7" class="bg-lightgrey wide-70 servicess-section division">
+        <div class="container">
 
-        <div class="row">
-            <div class="col-lg-12 career-form mt-5">
-                @if(session('success'))
-                <p style="color: red;">{{ session('success') }}</p>
-                @endif
-                <form>
-                    @csrf
 
-                    <div class="form-row">
-                        <div class="form-group car col-lg-12" style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="flex: 1; display: flex; align-items: center;">
-                                <label for="name" style="margin-right: 10px; min-width: 100px;">Name:</label>
-                                <input type="text" id="name" name="name" placeholder="Full Name" value="{{ $personal_information->name }}" readonly style="border: none; flex: 1;">
-                            </div>
-                            <div style="flex: 1; display: flex; align-items: center;">
-                                <label for="date" style="margin-right: 10px; min-width: 100px;">DOB:</label>
-                                <input placeholder="DOB" class="textbox-n" type="text" value="{{ $personal_information->dob }}" onfocus="(this.type='date')" onblur="(this.type='text')" name="dob" id="date" readonly style="border: none; flex: 1;">
+            <div class="row">
+                <div class="col-lg-12 career-form mt-5">
+                    <form >
+                        @csrf
+
+                        <div class="form-row">
+                            <div class="form-group car col-lg-12" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div style="flex: 1; display: flex; align-items: center;">
+                                    <label for="name" style="margin-right: 10px; min-width: 100px;">Name:</label>
+                                    <input type="text" id="name" name="name" placeholder="Full Name" value="{{ $personal_information->name }}" readonly style="border: none; flex: 1;">
+                                </div>
+                                <div style="flex: 1; display: flex; align-items: center;">
+                                    <label for="date" style="margin-right: 10px; min-width: 100px;">DOB:</label>
+                                    <input placeholder="DOB" class="textbox-n" type="text" value="{{ $personal_information->dob }}" onfocus="(this.type='date')" onblur="(this.type='text')" name="dob" id="date" readonly style="border: none; flex: 1;">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-row">
+
+
+                        <div class="form-row">
                         <div class="form-group car col-lg-12" style="display: flex; align-items: center;">
                             <label for="permanent-address" style="margin-right: 10px; min-width: 150px;">Permanent Address:</label>
                             <textarea id="permanent-address" name="permanent_address" rows="2" placeholder="Permanent Address" readonly style="flex: 1;">{{ $personal_information->permanent_address }}</textarea>
@@ -65,7 +65,8 @@
                             <textarea id="current-address" name="current_address" rows="2" placeholder="Current Address" readonly style="flex: 1;">{{ $personal_information->current_address }}</textarea>
                         </div>
                     </div>
-                    
+
+
                     <div class="form-row">
                         <div class="form-group car col-lg-6" style="display: flex; align-items: center;">
                             <label for="marital_status" style="margin-right: 10px; min-width: 150px;">Marital Status:</label>
@@ -76,8 +77,8 @@
                             <input type="text" id="spouse-details" name="spouse-details" readonly placeholder="If married, details of Spouse" value="{{ $personal_information->spouse_details }}" style="flex: 1;">
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="form-row">
                         <div class="form-group car col-lg-6" style="display: flex; align-items: center;">
                             <label for="mobile" style="margin-right: 10px; min-width: 150px;">Mobile No:</label>
@@ -88,7 +89,7 @@
                             <input type="email" id="email" name="email" placeholder="E-Mail" readonly value="{{ $personal_information->email }}" style="flex: 1;">
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group car col-lg-6" style="display: flex; align-items: center;">
                             <label for="medical-registration" style="margin-right: 10px; min-width: 250px;">Medical Council Registration No (MBBS/BDS/BHMS):</label>
@@ -99,12 +100,12 @@
                             <input type="text" readonly name="state" value="{{ $personal_information->state }}" style="flex: 1;">
                         </div>
                     </div>
-                    
+
+
                     <div class="form-group car" style="display: flex; align-items: center;">
                         <label for="remuneration" style="margin-right: 10px; min-width: 200px;">Present Remuneration:</label>
                         <input type="text" id="remuneration" value="{{ $personal_information->remuneration }}" name="remuneration" placeholder="Present Remuneration" readonly style="flex: 1;">
                     </div>
-                    
 
                     <h3>Academic Qualification:</h3>
                     <div class="table-responsive">
@@ -137,6 +138,7 @@
                             </tbody>
                         </table>
                     </div>
+
 
                     <h3>Experience:</h3>
                     <div class="table-responsive">
@@ -183,6 +185,7 @@
                         <input type="text" id="languages-known" name="languages_known" readonly placeholder="Languages Known" value="{{ $personal_information->languages_known }}">
                     </div>
 
+
                     <h3>References:</h3>
                     <div class="table-responsive">
                         <table class="table table-bordered academic">
@@ -211,26 +214,39 @@
                         </table>
                     </div>
 
-                    <p>All the above information are true to my knowledge. If appointed, I am willing to abide by the rules and
-                        regulations of Bombay Hospital as existing at present and as may be modified from time to time.</p>
 
-                    <div class="form-row">
-                        <div class="form-group car col-lg-4">
-                            <p class="today-date">Date : <span id="demo"></span></p>
-                        </div>
-                        <div class="form-group car col-lg-4">
-                        </div>
-                        <div class="form-group car col-lg-4">
-                            <div style="flex: 1; display: flex; align-items: center;">
-                                <label for="name" style="margin-right: 10px; min-width: 100px;">Name:</label>
-                            <input type="text" id="signature-name" readonly placeholder="Name" name="signature_name" value="{{ $personal_information->name_2 }}">
+
+                        <p>All the above information are true to my knowledge. If appointed, I am willing to abide by the
+                            rules and
+                            regulations of Bombay Hospital as existing at present and as may be modified from time to time.
+                        </p>
+
+                        <div class="form-row">
+                            <div class="form-group car col-lg-4">
+                                <p class="today-date">Date : <span id="demo"></span> </p>
+                            </div>
+                            <div class="form-group car col-lg-4">
+                                <!-- <label for="signature-name">Name:</label>
+                                            <input type="text" id="signature-name" name="signature-name"> -->
+                            </div>
+                            <div class="form-group car col-lg-4">
+                                <div style="flex: 1; display: flex; align-items: center;">
+                                    <label for="name" style="margin-right: 10px; min-width: 100px;">Name:</label>
+                                <input type="text" id="signature-name" readonly placeholder="Name" name="signature_name" value="{{ $personal_information->name_2 }}">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                        <div class="form-group submit-button text-center">
+                            <button type="submit"
+                                class="btn px-4 submit-button fs-6 blue-hover submit-button ms-auto mt-4">Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
+
+
+
         </div>
-    </div>
-</section>
+    </section>
 
 @stop
