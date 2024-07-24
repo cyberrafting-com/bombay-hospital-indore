@@ -41,7 +41,7 @@
                         <p style="color: red;">{{ session('success') }}</p>
                     @endif
 
-                    <form method="post" action="{{ route('rmo-data') }}" enctype="multipart/form-data">
+                    <form>
                         @csrf
 
                         <div class="form-row">

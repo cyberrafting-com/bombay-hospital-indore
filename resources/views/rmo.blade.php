@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- BREADCRUMB
-       ============================================= -->
+                                       ============================================= -->
     <div id="breadcrumb" class="division">
         <div class="container">
             <div class="row">
@@ -107,7 +107,8 @@
                             <div class="form-group car col-lg-6">
                                 <select id="state" name="state" style="color: #626161 !important;">
                                     <option value="">Select State Where Registered</option>
-                                    <option value="Andhra Pradesh" {{ old('state') == 'Andhra Pradesh' ? 'selected' : '' }}>
+                                    <option value="Andhra Pradesh"
+                                        {{ old('state') == 'Andhra Pradesh' ? 'selected' : '' }}>
                                         Andhra Pradesh</option>
                                     <option value="Arunachal Pradesh"
                                         {{ old('state') == 'Arunachal Pradesh' ? 'selected' : '' }}>Arunachal Pradesh
@@ -166,7 +167,7 @@
                             </div>
                         </div>
                         <div class="form-group car">
-                            <input type="text" id="remuneration" value="{{ old('remuneration') }}"
+                            <input type="number" id="remuneration" value="{{ old('remuneration') }}"
                                 name="remuneration" placeholder="Present Remuneration" required>
                         </div>
 

@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- BREADCRUMB
-               ============================================= -->
+                               ============================================= -->
     <div id="breadcrumb" class="division">
         <div class="container">
             <div class="row">
@@ -106,7 +106,8 @@
                             <div class="form-group car col-lg-6">
                                 <select id="state" name="state" style="color: #626161 !important;">
                                     <option value="">Select State Where Registered</option>
-                                    <option value="Andhra Pradesh" {{ old('state') == 'Andhra Pradesh' ? 'selected' : '' }}>
+                                    <option value="Andhra Pradesh"
+                                        {{ old('state') == 'Andhra Pradesh' ? 'selected' : '' }}>
                                         Andhra Pradesh</option>
                                     <option value="Arunachal Pradesh"
                                         {{ old('state') == 'Arunachal Pradesh' ? 'selected' : '' }}>Arunachal Pradesh
@@ -134,7 +135,8 @@
                                         Maharashtra</option>
                                     <option value="Manipur" {{ old('state') == 'Manipur' ? 'selected' : '' }}>Manipur
                                     </option>
-                                    <option value="Meghalaya" {{ old('state') == 'Meghalaya' ? 'selected' : '' }}>Meghalaya
+                                    <option value="Meghalaya" {{ old('state') == 'Meghalaya' ? 'selected' : '' }}>
+                                        Meghalaya
                                     </option>
                                     <option value="Mizoram" {{ old('state') == 'Mizoram' ? 'selected' : '' }}>Mizoram
                                     </option>
@@ -299,7 +301,7 @@
                                                 value="{{ old('institution_1') }}" name="institution_1"
                                                 placeholder="Institution" required></td>
                                         <td><input type="text" class="form-control" value="{{ old('details_1') }}"
-                                                name="details_1" placeholder="Details" readonly></td>
+                                                name="details_1" placeholder="Details" required></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
@@ -313,7 +315,7 @@
                                                 value="{{ old('institution_2') }}" placeholder="Institution" required>
                                         </td>
                                         <td><input type="text" class="form-control" name="details_2"
-                                                value="{{ old('details_2') }}" placeholder="Details" readonly></td>
+                                                value="{{ old('details_2') }}" placeholder="Details" required></td>
                                     </tr>
 
 
@@ -381,7 +383,7 @@
                             </div>
                             <div class="form-group car col-lg-4">
                                 <!-- <label for="signature-name">Name:</label>
-                                        <input type="text" id="signature-name" name="signature-name"> -->
+                                                        <input type="text" id="signature-name" name="signature-name"> -->
                             </div>
                             <div class="form-group car col-lg-4">
                                 <input type="text" id="signature-name" placeholder="Name" name="signature_name">

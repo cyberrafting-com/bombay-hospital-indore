@@ -17,7 +17,7 @@ class HospitalController extends Controller
         //2
         public function rmoData()
         {
-            return view('associate-consultant');
+            return view('rmo');
         }
     
     
@@ -190,20 +190,20 @@ class HospitalController extends Controller
             'mbbs_bhms_bds_attempt' => 'nullable|string',
 
             // Master’s Degree
-            'masters_degree_college' => 'nullable|string',
-            'masters_degree_university' => 'nullable|string',
-            'masters_degree_year' => 'nullable|digits:4|integer|between:1960,' . date('Y'),
-            'masters_degree_percentage' => 'nullable|numeric|regex:/^\d*(\.\d{1,2})?$/',
-            'masters_degree_position' => 'nullable|string',
-            'masters_degree_attempt' => 'nullable|string',
+            'masters_college' => 'nullable|string',
+            'masters_university' => 'nullable|string',
+            'masters_year' => 'nullable|digits:4|integer|between:1960,' . date('Y'),
+            'masters_percentage' => 'nullable|numeric|regex:/^\d*(\.\d{1,2})?$/',
+            'masters_position' => 'nullable|string',
+            'masters_attempt' => 'nullable|string',
 
             //  Other Certifications
-            'other_certifications_college' => 'nullable|string',
-            'other_certifications_university' => 'nullable|string',
-            'other_certifications_year' => 'nullable|digits:4|integer|between:1960,' . date('Y'),
-            'other_certifications_percentage' => 'nullable|numeric|regex:/^\d*(\.\d{1,2})?$/',
-            'other_certifications_position' => 'nullable|string',
-            'other_certifications_attempt' => 'nullable|string',
+            'other_certification_college' => 'nullable|string',
+            'other_certification_university' => 'nullable|string',
+            'other_certification_year' => 'nullable|digits:4|integer|between:1960,' . date('Y'),
+            'other_certification_percentage' => 'nullable|numeric|regex:/^\d*(\.\d{1,2})?$/',
+            'other_certification_position' => 'nullable|string',
+            'other_certification_attempt' => 'nullable|string',
 
 
             ];
@@ -336,7 +336,7 @@ class HospitalController extends Controller
             case 'store':
                 $educationLevels = ['ssc', 'hsc', 'ug', 'mbbs', 'pg', 'md_ms_dnb', 'ss', 'dm_mch_dnb', 'fellowship'];
                 break;
-            case 'rmo-data':
+            case 'rmoFrom':
                 $educationLevels = ['ssc', 'hsc', 'mbbs', 'md_ms_dnb'];
                 break;
             case 'administrator':

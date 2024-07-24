@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- BREADCRUMB
-           ============================================= -->
+                               ============================================= -->
     <div id="breadcrumb" class="division">
         <div class="container">
             <div class="row">
@@ -34,10 +34,10 @@
 
             <!-- SECTION TITLE -->
             <!-- <div class="row">
-                    <div class="col-lg-10 offset-lg-1 section-title">
-                        <h3 class="h3-md steelblue-color">Medical Administrator</h3>
-                    </div>
-                </div> -->
+                                        <div class="col-lg-10 offset-lg-1 section-title">
+                                            <h3 class="h3-md steelblue-color">Medical Administrator</h3>
+                                        </div>
+                                    </div> -->
 
 
             <div class="row">
@@ -89,11 +89,13 @@
 
                         <div class="form-row">
                             <div class="form-group car col-lg-6">
-                                <input type="number" id="mobile" name="mobile"  value="{{ old('mobile') }}" placeholder="Mobile No" required>
+                                <input type="number" id="mobile" name="mobile" value="{{ old('mobile') }}"
+                                    placeholder="Mobile No" required>
                             </div>
                             <div class="form-group car col-lg-6">
-                                <input type="email" id="email" name="email"  value="{{ old('email') }}" placeholder="E-Mail" required>
-                                
+                                <input type="email" id="email" name="email" value="{{ old('email') }}"
+                                    placeholder="E-Mail" required>
+
                             </div>
                         </div>
 
@@ -101,47 +103,75 @@
 
                         <div class="form-row">
                             <div class="form-group car col-lg-6">
-                                <input type="text" id="medical-registration" value="{{ old('medical_registration') }}" name="medical_registration"
+                                <input type="text" id="medical-registration" value="{{ old('medical_registration') }}"
+                                    name="medical_registration"
                                     placeholder="Medical Council Registration No (MBBS/BDS/BHMS)" required>
                             </div>
                             <div class="form-group car col-lg-6">
                                 <select id="state" name="state" style="color: #626161 !important;">
                                     <option value="">Select State Where Registered</option>
-                                    <option value="Andhra Pradesh" {{ old('state') == 'Andhra Pradesh' ? 'selected' : '' }}>Andhra Pradesh</option>
-                                    <option value="Arunachal Pradesh" {{ old('state') == 'Arunachal Pradesh' ? 'selected' : '' }}>Arunachal Pradesh</option>
+                                    <option value="Andhra Pradesh"
+                                        {{ old('state') == 'Andhra Pradesh' ? 'selected' : '' }}>Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh"
+                                        {{ old('state') == 'Arunachal Pradesh' ? 'selected' : '' }}>Arunachal Pradesh
+                                    </option>
                                     <option value="Assam" {{ old('state') == 'Assam' ? 'selected' : '' }}>Assam</option>
                                     <option value="Bihar" {{ old('state') == 'Bihar' ? 'selected' : '' }}>Bihar</option>
-                                    <option value="Chhattisgarh" {{ old('state') == 'Chhattisgarh' ? 'selected' : '' }}>Chhattisgarh</option>
+                                    <option value="Chhattisgarh" {{ old('state') == 'Chhattisgarh' ? 'selected' : '' }}>
+                                        Chhattisgarh</option>
                                     <option value="Goa" {{ old('state') == 'Goa' ? 'selected' : '' }}>Goa</option>
-                                    <option value="Gujarat" {{ old('state') == 'Gujarat' ? 'selected' : '' }}>Gujarat</option>
-                                    <option value="Haryana" {{ old('state') == 'Haryana' ? 'selected' : '' }}>Haryana</option>
-                                    <option value="Himachal Pradesh" {{ old('state') == 'Himachal Pradesh' ? 'selected' : '' }}>Himachal Pradesh</option>
-                                    <option value="Jharkhand" {{ old('state') == 'Jharkhand' ? 'selected' : '' }}>Jharkhand</option>
-                                    <option value="Karnataka" {{ old('state') == 'Karnataka' ? 'selected' : '' }}>Karnataka</option>
-                                    <option value="Kerala" {{ old('state') == 'Kerala' ? 'selected' : '' }}>Kerala</option>
-                                    <option value="Madhya Pradesh" {{ old('state') == 'Madhya Pradesh' ? 'selected' : '' }}>Madhya Pradesh</option>
-                                    <option value="Maharashtra" {{ old('state') == 'Maharashtra' ? 'selected' : '' }}>Maharashtra</option>
-                                    <option value="Manipur" {{ old('state') == 'Manipur' ? 'selected' : '' }}>Manipur</option>
-                                    <option value="Meghalaya" {{ old('state') == 'Meghalaya' ? 'selected' : '' }}>Meghalaya</option>
-                                    <option value="Mizoram" {{ old('state') == 'Mizoram' ? 'selected' : '' }}>Mizoram</option>
-                                    <option value="Nagaland" {{ old('state') == 'Nagaland' ? 'selected' : '' }}>Nagaland</option>
-                                    <option value="Odisha" {{ old('state') == 'Odisha' ? 'selected' : '' }}>Odisha</option>
-                                    <option value="Punjab" {{ old('state') == 'Punjab' ? 'selected' : '' }}>Punjab</option>
-                                    <option value="Rajasthan" {{ old('state') == 'Rajasthan' ? 'selected' : '' }}>Rajasthan</option>
-                                    <option value="Sikkim" {{ old('state') == 'Sikkim' ? 'selected' : '' }}>Sikkim</option>
-                                    <option value="Tamil Nadu" {{ old('state') == 'Tamil Nadu' ? 'selected' : '' }}>Tamil Nadu</option>
-                                    <option value="Telangana" {{ old('state') == 'Telangana' ? 'selected' : '' }}>Telangana</option>
-                                    <option value="Tripura" {{ old('state') == 'Tripura' ? 'selected' : '' }}>Tripura</option>
-                                    <option value="Uttar Pradesh" {{ old('state') == 'Uttar Pradesh' ? 'selected' : '' }}>Uttar Pradesh</option>
-                                    <option value="Uttarakhand" {{ old('state') == 'Uttarakhand' ? 'selected' : '' }}>Uttarakhand</option>
-                                    <option value="West Bengal" {{ old('state') == 'West Bengal' ? 'selected' : '' }}>West Bengal</option>
+                                    <option value="Gujarat" {{ old('state') == 'Gujarat' ? 'selected' : '' }}>Gujarat
+                                    </option>
+                                    <option value="Haryana" {{ old('state') == 'Haryana' ? 'selected' : '' }}>Haryana
+                                    </option>
+                                    <option value="Himachal Pradesh"
+                                        {{ old('state') == 'Himachal Pradesh' ? 'selected' : '' }}>Himachal Pradesh
+                                    </option>
+                                    <option value="Jharkhand" {{ old('state') == 'Jharkhand' ? 'selected' : '' }}>Jharkhand
+                                    </option>
+                                    <option value="Karnataka" {{ old('state') == 'Karnataka' ? 'selected' : '' }}>
+                                        Karnataka</option>
+                                    <option value="Kerala" {{ old('state') == 'Kerala' ? 'selected' : '' }}>Kerala
+                                    </option>
+                                    <option value="Madhya Pradesh"
+                                        {{ old('state') == 'Madhya Pradesh' ? 'selected' : '' }}>Madhya Pradesh</option>
+                                    <option value="Maharashtra" {{ old('state') == 'Maharashtra' ? 'selected' : '' }}>
+                                        Maharashtra</option>
+                                    <option value="Manipur" {{ old('state') == 'Manipur' ? 'selected' : '' }}>Manipur
+                                    </option>
+                                    <option value="Meghalaya" {{ old('state') == 'Meghalaya' ? 'selected' : '' }}>
+                                        Meghalaya</option>
+                                    <option value="Mizoram" {{ old('state') == 'Mizoram' ? 'selected' : '' }}>Mizoram
+                                    </option>
+                                    <option value="Nagaland" {{ old('state') == 'Nagaland' ? 'selected' : '' }}>Nagaland
+                                    </option>
+                                    <option value="Odisha" {{ old('state') == 'Odisha' ? 'selected' : '' }}>Odisha
+                                    </option>
+                                    <option value="Punjab" {{ old('state') == 'Punjab' ? 'selected' : '' }}>Punjab
+                                    </option>
+                                    <option value="Rajasthan" {{ old('state') == 'Rajasthan' ? 'selected' : '' }}>
+                                        Rajasthan</option>
+                                    <option value="Sikkim" {{ old('state') == 'Sikkim' ? 'selected' : '' }}>Sikkim
+                                    </option>
+                                    <option value="Tamil Nadu" {{ old('state') == 'Tamil Nadu' ? 'selected' : '' }}>Tamil
+                                        Nadu</option>
+                                    <option value="Telangana" {{ old('state') == 'Telangana' ? 'selected' : '' }}>
+                                        Telangana</option>
+                                    <option value="Tripura" {{ old('state') == 'Tripura' ? 'selected' : '' }}>Tripura
+                                    </option>
+                                    <option value="Uttar Pradesh" {{ old('state') == 'Uttar Pradesh' ? 'selected' : '' }}>
+                                        Uttar Pradesh</option>
+                                    <option value="Uttarakhand" {{ old('state') == 'Uttarakhand' ? 'selected' : '' }}>
+                                        Uttarakhand</option>
+                                    <option value="West Bengal" {{ old('state') == 'West Bengal' ? 'selected' : '' }}>West
+                                        Bengal</option>
                                 </select>
-        
+
                             </div>
                         </div>
                         <div class="form-group car">
-                            <input type="text" id="remuneration" value="{{ old('remuneration') }}" name="remuneration"
-                                placeholder="Present Remuneration" required>
+                            <input type="text" id="remuneration" value="{{ old('remuneration') }}"
+                                name="remuneration" placeholder="Present Remuneration" required>
                         </div>
 
                         <h3 class="mt-2">Academic Qualification:</h3>
@@ -163,67 +193,121 @@
                                     <tr>
                                         <td>1</td>
                                         <td>SSC</td>
-                                        <td><input type="text"   name="ssc_college"  value="{{ old('ssc_college') }}"  class="form-control" placeholder="College/Institute" required></td>
-                                        <td><input type="text"   name="ssc_university"  value="{{ old('ssc_university') }}"  class="form-control" placeholder="Board/University" required></td>
-                                        <td><input type="number"   name="ssc_year"  value="{{ old('ssc_year') }}"    class="form-control" placeholder="Year" required></td>
-                                        <td><input type="number"  step="any"   name="ssc_percentage"  value="{{ old('ssc_percentage') }}"   class="form-control" placeholder="% of Marks" required></td>
-                                        <td><input type="text"   name="ssc_position"  value="{{ old('ssc_position') }}"   class="form-control" placeholder="Rank/Position"></td>
-                                        <td><input type="text"   name="ssc_attempt"  value="{{ old('ssc_attempt') }}"   class="form-control" placeholder="Attempt"></td>
+                                        <td><input type="text" name="ssc_college" value="{{ old('ssc_college') }}"
+                                                class="form-control" placeholder="College/Institute" required></td>
+                                        <td><input type="text" name="ssc_university"
+                                                value="{{ old('ssc_university') }}" class="form-control"
+                                                placeholder="Board/University" required></td>
+                                        <td><input type="number" name="ssc_year" value="{{ old('ssc_year') }}"
+                                                class="form-control" placeholder="Year" required></td>
+                                        <td><input type="number" step="any" name="ssc_percentage"
+                                                value="{{ old('ssc_percentage') }}" class="form-control"
+                                                placeholder="% of Marks" required></td>
+                                        <td><input type="text" name="ssc_position" value="{{ old('ssc_position') }}"
+                                                class="form-control" placeholder="Rank/Position"></td>
+                                        <td><input type="text" name="ssc_attempt" value="{{ old('ssc_attempt') }}"
+                                                class="form-control" placeholder="Attempt"></td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <td>2</td>
                                         <td>HSC</td>
-                                        <td><input type="text"   name="hsc_college"   value="{{ old('hsc_college') }}"  class="form-control" placeholder="College/Institute" required></td>
-                                        <td><input type="text"   name="hsc_university"   value="{{ old('hsc_university') }}"  class="form-control" placeholder="Board/University" required></td>
-                                        <td><input type="number"   name="hsc_year"  value="{{ old('hsc_year') }}"   class="form-control" placeholder="Year" required></td>
-                                        <td><input type="number"  step="any"   name="hsc_percentage"  value="{{ old('hsc_percentage') }}"  class="form-control" placeholder="% of Marks" required></td>
-                                        <td><input type="text"   name="hsc_position"  value="{{ old('hsc_position') }}"   class="form-control" placeholder="Rank/Position"></td>
-                                        <td><input type="text"   name="hsc_attempt"  value="{{ old('hsc_attempt') }}"   class="form-control" placeholder="Attempt"></td>
+                                        <td><input type="text" name="hsc_college" value="{{ old('hsc_college') }}"
+                                                class="form-control" placeholder="College/Institute" required></td>
+                                        <td><input type="text" name="hsc_university"
+                                                value="{{ old('hsc_university') }}" class="form-control"
+                                                placeholder="Board/University" required></td>
+                                        <td><input type="number" name="hsc_year" value="{{ old('hsc_year') }}"
+                                                class="form-control" placeholder="Year" required></td>
+                                        <td><input type="number" step="any" name="hsc_percentage"
+                                                value="{{ old('hsc_percentage') }}" class="form-control"
+                                                placeholder="% of Marks" required></td>
+                                        <td><input type="text" name="hsc_position" value="{{ old('hsc_position') }}"
+                                                class="form-control" placeholder="Rank/Position"></td>
+                                        <td><input type="text" name="hsc_attempt" value="{{ old('hsc_attempt') }}"
+                                                class="form-control" placeholder="Attempt"></td>
                                     </tr>
 
 
                                     <tr>
                                         <td>3</td>
                                         <td>Details of UG Entrance Examination</td>
-                                        <td><input type="text"  name="ug_college"  value="{{ old('ug_college') }}"   class="form-control"  placeholder="College/Institute" required></td>
-                                        <td><input type="text"  name="ug_university"    value="{{ old('ug_university') }}"  class="form-control" placeholder="Board/University" required></td>
-                                        <td><input type="number"  name="ug_year"    value="{{ old('ug_year') }}"    class="form-control" placeholder="Year" required></td>
-                                        <td><input type="number"  step="any"  name="ug_percentage"  value="{{ old('ug_percentage') }}"    class="form-control" placeholder="% of Marks" required></td>
-                                        <td><input type="text"  name="ug_position"  value="{{ old('ug_position') }}"    class="form-control" placeholder="Rank/Position"></td>
-                                        <td><input type="text"  name="ug_attempt"  value="{{ old('ug_attempt') }}"    class="form-control" placeholder="Attempt"></td>
+                                        <td><input type="text" name="ug_college" value="{{ old('ug_college') }}"
+                                                class="form-control" placeholder="College/Institute" required></td>
+                                        <td><input type="text" name="ug_university"
+                                                value="{{ old('ug_university') }}" class="form-control"
+                                                placeholder="Board/University" required></td>
+                                        <td><input type="number" name="ug_year" value="{{ old('ug_year') }}"
+                                                class="form-control" placeholder="Year" required></td>
+                                        <td><input type="number" step="any" name="ug_percentage"
+                                                value="{{ old('ug_percentage') }}" class="form-control"
+                                                placeholder="% of Marks" required></td>
+                                        <td><input type="text" name="ug_position" value="{{ old('ug_position') }}"
+                                                class="form-control" placeholder="Rank/Position"></td>
+                                        <td><input type="text" name="ug_attempt" value="{{ old('ug_attempt') }}"
+                                                class="form-control" placeholder="Attempt"></td>
                                     </tr>
 
 
                                     <tr>
                                         <td>4</td>
                                         <td>MBBS/BHMS/BDS</td>
-                                        <td><input type="text"  value="{{old('')}}" name="mbbs_bhms_bds_college"    class="form-control" placeholder="College/Institute"   required></td>
-                                        <td><input type="text"  value="{{old('')}}" name="mbbs_bhms_bds_university"    class="form-control" placeholder="Board/University"  required></td>
-                                        <td><input type="number"value="{{old('')}}"   name="mbbs_bhms_bds_year"    class="form-control" placeholder="Year" required></td>
-                                        <td><input type="number"value="{{old('')}}"  step="any"     name="mbbs_bhms_bds_percentage"    class="form-control" placeholder="% of Marks" required>  </td>
-                                        <td><input type="text"  value="{{old('')}}" name="mbbs_bhms_bds_position"    class="form-control" placeholder="Rank/Position"></td>
-                                        <td><input type="text"  value="{{old('')}}" name="mbbs_bhms_bds_attempt"    class="form-control" placeholder="Attempt"></td>
+                                        <td><input type="text" value="{{ old('') }}"
+                                                name="mbbs_bhms_bds_college" class="form-control"
+                                                placeholder="College/Institute" required></td>
+                                        <td><input type="text" value="{{ old('') }}"
+                                                name="mbbs_bhms_bds_university" class="form-control"
+                                                placeholder="Board/University" required></td>
+                                        <td><input type="number"value="{{ old('') }}" name="mbbs_bhms_bds_year"
+                                                class="form-control" placeholder="Year" required></td>
+                                        <td><input type="number"value="{{ old('') }}" step="any"
+                                                name="mbbs_bhms_bds_percentage" class="form-control"
+                                                placeholder="% of Marks" required> </td>
+                                        <td><input type="text" value="{{ old('') }}"
+                                                name="mbbs_bhms_bds_position" class="form-control"
+                                                placeholder="Rank/Position"></td>
+                                        <td><input type="text" value="{{ old('') }}"
+                                                name="mbbs_bhms_bds_attempt" class="form-control" placeholder="Attempt">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
                                         <td>Master’s Degree</td>
-                                        <td><input type="text"    value="{{old('')}}"     name="masters_degree_college"    class="form-control" placeholder="College/Institute"  required></td>
-                                        <td><input type="text"    value="{{old('')}}"     name="masters_degree_university"    class="form-control" placeholder="Board/University"   required></td>
-                                        <td><input type="number"  value="{{old('')}}"       name="masters_degree_year"    class="form-control" placeholder="Year" required></td>
-                                        <td><input type="number"  value="{{old('')}}"     step="any"      name="masters_degree_percentage"    class="form-control" placeholder="% of Marks" required> </td>
-                                        <td><input type="text"    value="{{old('')}}"     name="masters_degree_position"    class="form-control" placeholder="Rank/Position"></td>
-                                        <td><input type="text"    value="{{old('')}}"     name="masters_degree_attempt"    class="form-control" placeholder="Attempt"></td>
+                                        <td><input type="text" value="{{ old('') }}" name="masters_college"
+                                                class="form-control" placeholder="College/Institute" required></td>
+                                        <td><input type="text" value="{{ old('') }}" name="masters_university"
+                                                class="form-control" placeholder="Board/University" required></td>
+                                        <td><input type="number" value="{{ old('') }}" name="masters_year"
+                                                class="form-control" placeholder="Year" required></td>
+                                        <td><input type="number" value="{{ old('') }}" step="any"
+                                                name="masters_percentage" class="form-control" placeholder="% of Marks"
+                                                required> </td>
+                                        <td><input type="text" value="{{ old('') }}" name="masters_position"
+                                                class="form-control" placeholder="Rank/Position"></td>
+                                        <td><input type="text" value="{{ old('') }}" name="masters_attempt"
+                                                class="form-control" placeholder="Attempt"></td>
                                     </tr>
                                     <tr>
                                         <td>6</td>
                                         <td>Other Certifications</td>
-                                        <td><input type="text"   value="{{old('')}}" name="other_certifications_college"      class="form-control" placeholder="College/Institute" required></td>
-                                        <td><input type="text"   value="{{old('')}}" name="other_certifications_university"     class="form-control" placeholder="Board/University"   required></td>
-                                        <td><input type="number" value="{{old('')}}"   name="other_certifications_year"     class="form-control" placeholder="Year" required></td>
-                                        <td><input type="number" value="{{old('')}}" step="any"     name="other_certifications_percentage"     class="form-control" placeholder="% of Marks" required>  </td>
-                                        <td><input type="text"   value="{{old('')}}" name="other_certifications_position"     class="form-control" placeholder="Rank/Position"></td>
-                                        <td><input type="text"   value="{{old('')}}" name="other_certifications_attempt"     class="form-control" placeholder="Attempt"></td>
+                                        <td><input type="text" value="{{ old('') }}"
+                                                name="other_certification_college" class="form-control"
+                                                placeholder="College/Institute" required></td>
+                                        <td><input type="text" value="{{ old('') }}"
+                                                name="other_certification_university" class="form-control"
+                                                placeholder="Board/University" required></td>
+                                        <td><input type="number" value="{{ old('') }}"
+                                                name="other_certification_year" class="form-control" placeholder="Year"
+                                                required></td>
+                                        <td><input type="number" value="{{ old('') }}" step="any"
+                                                name="other_certification_percentage" class="form-control"
+                                                placeholder="% of Marks" required> </td>
+                                        <td><input type="text" value="{{ old('') }}"
+                                                name="other_certification_position" class="form-control"
+                                                placeholder="Rank/Position"></td>
+                                        <td><input type="text" value="{{ old('') }}"
+                                                name="other_certification_attempt" class="form-control"
+                                                placeholder="Attempt"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -245,25 +329,31 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td><input type="text" class="form-control" value="{{ old('designation_1') }}"     name="designation_1" 
+                                        <td><input type="text" class="form-control"
+                                                value="{{ old('designation_1') }}" name="designation_1"
                                                 placeholder="Designation" required></td>
-                                        <td><input type="text" class="form-control" value="{{ old('duration_period_1') }}"   name="duration_period_1"
+                                        <td><input type="text" class="form-control"
+                                                value="{{ old('duration_period_1') }}" name="duration_period_1"
                                                 placeholder="Duration" required></td>
-                                        <td><input type="text" class="form-control"  value="{{ old('institution_1') }}"     name="institution_1" 
+                                        <td><input type="text" class="form-control"
+                                                value="{{ old('institution_1') }}" name="institution_1"
                                                 placeholder="Institution" required></td>
-                                        <td><input type="text" class="form-control" value="{{ old('details_1') }}"      name="details_1" 
-                                                placeholder="Details" required></td>
+                                        <td><input type="text" class="form-control" value="{{ old('details_1') }}"
+                                                name="details_1" placeholder="Details" required></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td><input type="text" class="form-control" name="designation_2"   value="{{ old('designation_2') }}" 
-                                                placeholder="Designation" required></td>
-                                        <td><input type="text" class="form-control" name="duration_period_2"  value="{{ old('duration_period_2') }}"
-                                                placeholder="Duration" required></td>
-                                        <td><input type="text" class="form-control" name="institution_2"   value="{{ old('institution_2') }}"
-                                                placeholder="Institution" required></td>
-                                        <td><input type="text" class="form-control" name="details_2"    value="{{ old('details_2') }}"
-                                                placeholder="Details" required></td>
+                                        <td><input type="text" class="form-control" name="designation_2"
+                                                value="{{ old('designation_2') }}" placeholder="Designation" required>
+                                        </td>
+                                        <td><input type="text" class="form-control" name="duration_period_2"
+                                                value="{{ old('duration_period_2') }}" placeholder="Duration" required>
+                                        </td>
+                                        <td><input type="text" class="form-control" name="institution_2"
+                                                value="{{ old('institution_2') }}" placeholder="Institution" required>
+                                        </td>
+                                        <td><input type="text" class="form-control" name="details_2"
+                                                value="{{ old('details_2') }}" placeholder="Details" required></td>
                                     </tr>
 
 
@@ -272,14 +362,14 @@
                         </div>
 
                         <div class="form-group car">
-                            <textarea id="achievements" name="activities"     rows="2" placeholder="Academic Activities & Publications">{{ old('activities') }}</textarea>
+                            <textarea id="achievements" name="activities" rows="2" placeholder="Academic Activities & Publications">{{ old('activities') }}</textarea>
                         </div>
                         <div class="form-group car">
                             <textarea id="achievements" name="other_achievements" rows="2" placeholder="Any Other Achievements">{{ old('other_achievements') }}</textarea>
                         </div>
                         <div class="form-group car">
-                            <input type="text" id="languages-known"   name="languages_known"   value="{{ old('languages_known') }}"
-                                placeholder="Languages Known">
+                            <input type="text" id="languages-known" name="languages_known"
+                                value="{{ old('languages_known') }}" placeholder="Languages Known">
                         </div>
 
                         <h3>References:</h3>
@@ -296,21 +386,23 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td><input type="text" class="form-control" name="ref_name_1" value="{{ old('ref_name_1') }}"
-                                                placeholder="Name" required></td>
-                                        <td><input type="text" class="form-control" name="ref_add_1" value="{{ old('ref_add_1') }}"
-                                                placeholder="Address" required></td>
-                                        <td><input type="number" class="form-control" name="ref_mob_1" value="{{ old('ref_mob_1') }}"
-                                                placeholder="Tel/Mobile No." required></td>
+                                        <td><input type="text" class="form-control" name="ref_name_1"
+                                                value="{{ old('ref_name_1') }}" placeholder="Name" required></td>
+                                        <td><input type="text" class="form-control" name="ref_add_1"
+                                                value="{{ old('ref_add_1') }}" placeholder="Address" required></td>
+                                        <td><input type="number" class="form-control" name="ref_mob_1"
+                                                value="{{ old('ref_mob_1') }}" placeholder="Tel/Mobile No." required>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td><input type="text" class="form-control"   name="ref_name_2" value="{{ old('ref_name_2') }}"
-                                                placeholder="Name" required></td>
-                                        <td><input type="text" class="form-control" name="ref_add_2"  value="{{ old('ref_add_2') }}"
-                                                placeholder="Address" required></td>
-                                        <td><input type="number" class="form-control" name="ref_mob_2" value="{{ old('ref_mob_2') }}"
-                                                placeholder="Tel/Mobile No." required></td>
+                                        <td><input type="text" class="form-control" name="ref_name_2"
+                                                value="{{ old('ref_name_2') }}" placeholder="Name" required></td>
+                                        <td><input type="text" class="form-control" name="ref_add_2"
+                                                value="{{ old('ref_add_2') }}" placeholder="Address" required></td>
+                                        <td><input type="number" class="form-control" name="ref_mob_2"
+                                                value="{{ old('ref_mob_2') }}" placeholder="Tel/Mobile No." required>
+                                        </td>
                                     </tr>
 
                                 </tbody>
@@ -329,7 +421,7 @@
                             </div>
                             <div class="form-group car col-lg-4">
                                 <!-- <label for="signature-name">Name:</label>
-                                    <input type="text" id="signature-name" name="signature-name"> -->
+                                                        <input type="text" id="signature-name" name="signature-name"> -->
                             </div>
                             <div class="form-group car col-lg-4">
                                 <input type="text" id="signature-name" placeholder="Name" name="signature_name">
@@ -349,4 +441,3 @@
     </section>
 
 @stop
-
