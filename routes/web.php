@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\TodoListController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,38 @@ use App\Http\Controllers\TodoListController;
         \Artisan::call('route:clear');
         \Artisan::call('cache:clear');
     });
+
+    // Route::get('/login', function () {
+    //     return view('login');
+    // });
+    
+
+    //  Admin Login 
+
+    // Route::get('/login', [AdminController::class, 'loginForm'])->name('login');
+    // Route::post('/admin_login', [AdminController::class, 'loginData'])->name('admin_login');
+    // Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+
+    // Route::get('/view-data', [AdminController::class, 'viewData'])->name('viewdata');
+    // Route::get('/view-details/{id}', [AdminController::class, 'viewDetails'])->name('viewDetails');
+    // Route::get('/view-data/form/{form_name}', [AdminController::class, 'viewDataByForm'])->name('viewDataByForm');
+
+
+
+
+    // Public routes (accessible without authentication)
+       Route::get('/login', [AdminController::class, 'loginForm'])->name('login');
+       Route::post('/admin_login', [AdminController::class, 'loginData'])->name('admin_login');
+
+// Protected routes (accessible only by authenticated users)
+
+    Route::middleware(['auth'])->group(function () {
+            Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+            Route::get('/view-data', [AdminController::class, 'viewData'])->name('viewdata');
+            Route::get('/view-details/{id}', [AdminController::class, 'viewDetails'])->name('viewDetails');
+            Route::get('/view-data/form/{form_name}', [AdminController::class, 'viewDataByForm'])->name('viewDataByForm');
+});
+
 
 Route::get('/', function () {
     return view('home');

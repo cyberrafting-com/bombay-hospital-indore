@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- BREADCRUMB
-                                       ============================================= -->
+                                                                           ============================================= -->
     <div id="breadcrumb" class="division">
         <div class="container">
             <div class="row">
@@ -43,6 +43,9 @@
 
                     <form method="post" action="{{ route('rmoFrom') }}" enctype="multipart/form-data">
                         @csrf
+
+                        <input type="hidden" name="form_name" value="RMO">
+
                         <div class="form-row">
                             <div class="form-group car col-lg-6">
                                 <input type="text" id="name" name="name" value="{{ old('name') }}"
@@ -80,7 +83,7 @@
 
                             </div>
                             <div class="form-group car col-lg-6">
-                                <input type="text" id="spouse-details" name="spouse-details"
+                                <input type="text" id="spouse-details" name="spouse-details" required
                                     value="{{ old('spouse-details') }}" placeholder="If married, details of Spouse">
                             </div>
                         </div>
@@ -125,11 +128,14 @@
                                     <option value="Himachal Pradesh"
                                         {{ old('state') == 'Himachal Pradesh' ? 'selected' : '' }}>Himachal Pradesh
                                     </option>
-                                    <option value="Jharkhand" {{ old('state') == 'Jharkhand' ? 'selected' : '' }}>Jharkhand
+                                    <option value="Jharkhand" {{ old('state') == 'Jharkhand' ? 'selected' : '' }}>
+                                        Jharkhand
                                     </option>
-                                    <option value="Karnataka" {{ old('state') == 'Karnataka' ? 'selected' : '' }}>Karnataka
+                                    <option value="Karnataka" {{ old('state') == 'Karnataka' ? 'selected' : '' }}>
+                                        Karnataka
                                     </option>
-                                    <option value="Kerala" {{ old('state') == 'Kerala' ? 'selected' : '' }}>Kerala</option>
+                                    <option value="Kerala" {{ old('state') == 'Kerala' ? 'selected' : '' }}>Kerala
+                                    </option>
                                     <option value="Madhya Pradesh"
                                         {{ old('state') == 'Madhya Pradesh' ? 'selected' : '' }}>Madhya Pradesh</option>
                                     <option value="Maharashtra" {{ old('state') == 'Maharashtra' ? 'selected' : '' }}>

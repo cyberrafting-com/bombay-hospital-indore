@@ -324,6 +324,7 @@ class HospitalController extends Controller
         $data->ref_add_2 = $request->ref_add_2;
         $data->ref_mob_2 = $request->ref_mob_2;
         $data->name_2 = $request->signature_name;
+        $data->form_name = $request->input('form_name');
         $data->save();
 
         // Create EducationDetail records

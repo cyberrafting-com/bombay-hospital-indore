@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- BREADCRUMB
-                               ============================================= -->
+                                       ============================================= -->
     <div id="breadcrumb" class="division">
         <div class="container">
             <div class="row">
@@ -37,6 +37,8 @@
                 <div class="col-lg-12 career-form mt-5">
                     <form method="post" action="{{ route('medical_oncologist') }}" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="form_name" value="Medical Oncologist">
+
                         <div class="form-row">
                             <div class="form-group car col-lg-6">
                                 <input type="text" id="name" name="name" value="{{ old('name') }}"
@@ -73,7 +75,7 @@
 
                             </div>
                             <div class="form-group car col-lg-6">
-                                <input type="text" id="spouse-details" name="spouse-details"
+                                <input type="text" id="spouse-details" name="spouse-details"  required
                                     value="{{ old('spouse-details') }}" placeholder="If married, details of Spouse">
                             </div>
                         </div>
@@ -103,7 +105,8 @@
                             <div class="form-group car col-lg-6">
                                 <select id="state" name="state" style="color: #626161 !important;">
                                     <option value="">Select State Where Registered</option>
-                                    <option value="Andhra Pradesh" {{ old('state') == 'Andhra Pradesh' ? 'selected' : '' }}>
+                                    <option value="Andhra Pradesh"
+                                        {{ old('state') == 'Andhra Pradesh' ? 'selected' : '' }}>
                                         Andhra Pradesh</option>
                                     <option value="Arunachal Pradesh"
                                         {{ old('state') == 'Arunachal Pradesh' ? 'selected' : '' }}>Arunachal Pradesh
@@ -122,9 +125,11 @@
                                     </option>
                                     <option value="Jharkhand" {{ old('state') == 'Jharkhand' ? 'selected' : '' }}>Jharkhand
                                     </option>
-                                    <option value="Karnataka" {{ old('state') == 'Karnataka' ? 'selected' : '' }}>Karnataka
+                                    <option value="Karnataka" {{ old('state') == 'Karnataka' ? 'selected' : '' }}>
+                                        Karnataka
                                     </option>
-                                    <option value="Kerala" {{ old('state') == 'Kerala' ? 'selected' : '' }}>Kerala</option>
+                                    <option value="Kerala" {{ old('state') == 'Kerala' ? 'selected' : '' }}>Kerala
+                                    </option>
                                     <option value="Madhya Pradesh"
                                         {{ old('state') == 'Madhya Pradesh' ? 'selected' : '' }}>Madhya Pradesh</option>
                                     <option value="Maharashtra" {{ old('state') == 'Maharashtra' ? 'selected' : '' }}>
@@ -163,7 +168,7 @@
                             </div>
                         </div>
                         <div class="form-group car">
-                            <input type="text" id="remuneration" value="{{ old('remuneration') }}"
+                            <input type="number" id="remuneration" value="{{ old('remuneration') }}"
                                 name="remuneration" placeholder="Present Remuneration" required>
                         </div>
 
@@ -379,7 +384,7 @@
                             </div>
                             <div class="form-group car col-lg-4">
                                 <!-- <label for="signature-name">Name:</label>
-                                                        <input type="text" id="signature-name" name="signature-name"> -->
+                                                                <input type="text" id="signature-name" name="signature-name"> -->
                             </div>
                             <div class="form-group car col-lg-4">
                                 <input type="text" id="signature-name" placeholder="Name" name="signature_name">

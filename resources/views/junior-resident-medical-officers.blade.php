@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- BREADCRUMB
-                                           ============================================= -->
+                                                       ============================================= -->
     <div id="breadcrumb" class="division">
         <div class="container">
             <div class="row">
@@ -36,6 +36,8 @@
                 <div class="col-lg-12 career-form mt-5">
                     <form method="post" action="{{ route('medical_officers_data') }}" enctype="multipart/form-data">
                         @csrf
+
+                        <input type="hidden" name="form_name" value="Junior Resident Medical Officers">
 
 
                         <div class="form-row">
@@ -75,7 +77,7 @@
 
                             </div>
                             <div class="form-group car col-lg-6">
-                                <input type="text" id="spouse-details" name="spouse-details"
+                                <input type="text" id="spouse-details" name="spouse-details" required
                                     value="{{ old('spouse-details') }}" placeholder="If married, details of Spouse">
                             </div>
                         </div>
@@ -122,7 +124,8 @@
                                     </option>
                                     <option value="Jharkhand" {{ old('state') == 'Jharkhand' ? 'selected' : '' }}>Jharkhand
                                     </option>
-                                    <option value="Karnataka" {{ old('state') == 'Karnataka' ? 'selected' : '' }}>Karnataka
+                                    <option value="Karnataka" {{ old('state') == 'Karnataka' ? 'selected' : '' }}>
+                                        Karnataka
                                     </option>
                                     <option value="Kerala" {{ old('state') == 'Kerala' ? 'selected' : '' }}>Kerala
                                     </option>
@@ -382,7 +385,7 @@
                             </div>
                             <div class="form-group car col-lg-4">
                                 <!-- <label for="signature-name">Name:</label>
-                                                                    <input type="text" id="signature-name" name="signature-name"> -->
+                                                                                <input type="text" id="signature-name" name="signature-name"> -->
                             </div>
                             <div class="form-group car col-lg-4">
                                 <input type="text" id="signature-name" value="{{ old('signature_name') }}"

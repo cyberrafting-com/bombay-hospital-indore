@@ -37,6 +37,7 @@
                 <div class="col-lg-12 career-form mt-5">
                     <form method="post" action="{{ route('surgical-data') }}" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="form_name" value="Surgical Oncologist">
 
                         <div class="form-row">
                             <div class="form-group car col-lg-6">
@@ -75,7 +76,7 @@
 
                             </div>
                             <div class="form-group car col-lg-6">
-                                <input type="text" id="spouse-details" name="spouse-details"
+                                <input type="text" id="spouse-details" name="spouse-details"  required
                                     value="{{ old('spouse-details') }}" placeholder="If married, details of Spouse">
                             </div>
                         </div>
