@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -7,7 +6,7 @@ use App\Models\User;
 use App\Models\PersonalInformation;
 use App\Models\EducationDetail;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Hash; // Add this import
 
 class AdminController extends Controller
 {
@@ -32,67 +31,51 @@ class AdminController extends Controller
         return view('viewData', compact('personalInformations', 'form_name'));
     }
     
+    // Method to display more details for a specific user
+    public function viewDetails($id)
+    {
+        $personalInformation = PersonalInformation::with('educationDetails')->find($id);
+        return view('viewDetails', compact('personalInformation'));
+    }
 
-
-     // Method to display more details for a specific user
-     public function viewDetails($id)
-     {
-         $personalInformation = PersonalInformation::with('educationDetails')->find($id);
-         return view('viewDetails', compact('personalInformation'));
-     }
-
-
-     public function logout(Request $request)
-     {
-         Auth::logout();
-     
-         // Invalidate the session and regenerate the token
-         $request->session()->invalidate();
-         $request->session()->regenerateToken();
-     
-         return redirect()->route('login');
-     }
-     
-     public function loginData(Request $request)
-     {
-         // Validate the request
-         $credentials = $request->validate([
-            'email' => 'required|email',
-             'password' => 'required'
-            
-         ]);
-       
-     
-         // Get the input data
-        //  $credentials = $request->only('email', 'password');
-     
-         // Debugging information
-        //  \Log::info('Login attempt', $credentials);
-     
-
-
+    public function logout(Request $request)
+    {
+        Auth::logout();
+    
+        // Invalidate the session and regenerate the token
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+    
+        return redirect()->route('login');
+    }
+    
+    public function loginData(Request $request)
+    {
+        // Validate the request
         $credentials = $request->validate([
             'email' => 'required|email',
-            'password' => 'required',
-
+            'password' => 'required'
         ]);
 
-         // Attempt to authenticate the user
-         if (Auth::attempt($credentials)) {
-            
-             // Regenerate session to prevent fixation attacks
-            //  $request->session()->regenerate();
-            // $request->session()->regenerate();
-     
-             return redirect()->route('viewdata')->with('success', 'Login successful');
-         } else {
-             // Log failed attempt
-             \Log::warning('Login failed', $credentials);
-     
-             return back()->withErrors([
-                 'email' => 'The provided credentials do not match our records.',
-             ]);
-         }
-     }
-     
+        // Find the user by email
+        $user = User::where('email', $credentials['email'])->first();
+
+        // Check if the user exists and the password matches
+        if ($user && Hash::check($credentials['password'], $user->password)) {
+            // Log in the user
+            Auth::login($user);
+
+            // Regenerate session to prevent fixation attacks
+            $request->session()->regenerate();
+
+            return redirect()->route('viewdata')->with('success', 'Login successful');
+        } else {
+            // Log failed attempt
+            \Log::warning('Login failed', $credentials);
+
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ]);
+        }
+    }
 }
