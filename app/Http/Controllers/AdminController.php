@@ -55,22 +55,18 @@ class AdminController extends Controller
      
      public function loginData(Request $request)
      {
-         // Validate the request
-         $request->validate([
-             'email' => 'required|email',
-             'password' => 'required',
-         ]);
-     
-         // Get the input data
-         $credentials = $request->only('email', 'password');
-     
-         // Debugging information
-         \Log::info('Login attempt', $credentials);
-     
+
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+
+        ]);
+
          // Attempt to authenticate the user
          if (Auth::attempt($credentials)) {
+            
              // Regenerate session to prevent fixation attacks
-             $request->session()->regenerate();
+            // $request->session()->regenerate();
      
              return redirect()->route('viewdata')->with('success', 'Login successful');
          } else {
