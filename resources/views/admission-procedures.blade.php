@@ -1,4 +1,4 @@
-@php($title = 'Admission Procedures | Bombay Hospital Indore')
+@php($title = 'Admission Procedures |  Bombay Hospital Indore')
 @section('meta_desc') @endsection
 
 @extends('layouts.default')
