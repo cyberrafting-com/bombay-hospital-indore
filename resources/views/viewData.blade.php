@@ -118,6 +118,7 @@
                 <thead class="bg-primary text-white">
                     <tr>
                         <th class="text-center">Name</th>
+                        <th class="text-center">Date & Time</th>
                         <th class="text-center">Mobile Number</th>
                         <th class="text-center">Email</th>
                         <th class="text-center">Applied From</th>
@@ -128,6 +129,7 @@
                     @foreach ($personalInformations as $personalInformation)
                         <tr>
                             <td>{{ $personalInformation->name }}</td>
+                            <td>{{ $personalInformation->date_time}}</td>
                             <td>{{ $personalInformation->mobile }}</td>
                             <td>{{ $personalInformation->email }}</td>
                             <td>{{ $personalInformation->form_name }}</td>
