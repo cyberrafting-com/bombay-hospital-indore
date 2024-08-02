@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- BREADCRUMB
-                   ============================================= -->
+                           ============================================= -->
     <div id="breadcrumb" class="division">
         <div class="container">
             <div class="row">
@@ -242,20 +242,32 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td><input type="text" class="form-control" name="ref_name_1" placeholder="Name" readonly value="{{ $personal_information->ref_name_1 }}"></td>
-                                        <td><input type="text" class="form-control" name="ref_add_1" placeholder="Address" readonly value="{{ $personal_information->ref_add_1 }}"></td>
-                                        <td><input type="text" class="form-control" name="ref_mob_1" placeholder="Tel/Mobile No." readonly value="{{ $personal_information->ref_mob_1 }}"></td>
+                                        <td><input type="text" class="form-control" name="ref_name_1"
+                                                placeholder="Name" readonly
+                                                value="{{ $personal_information->ref_name_1 }}"></td>
+                                        <td><input type="text" class="form-control" name="ref_add_1"
+                                                placeholder="Address" readonly
+                                                value="{{ $personal_information->ref_add_1 }}"></td>
+                                        <td><input type="text" class="form-control" name="ref_mob_1"
+                                                placeholder="Tel/Mobile No." readonly
+                                                value="{{ $personal_information->ref_mob_1 }}"></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td><input type="text" class="form-control" name="ref_name_2" placeholder="Name" readonly value="{{ $personal_information->ref_name_2 }}"></td>
-                                        <td><input type="text" class="form-control" name="ref_add_2" placeholder="Address" readonly value="{{ $personal_information->ref_add_2 }}"></td>
-                                        <td><input type="text" class="form-control" name="ref_mob_2" placeholder="Tel/Mobile No." readonly value="{{ $personal_information->ref_mob_2 }}"></td>
+                                        <td><input type="text" class="form-control" name="ref_name_2"
+                                                placeholder="Name" readonly
+                                                value="{{ $personal_information->ref_name_2 }}"></td>
+                                        <td><input type="text" class="form-control" name="ref_add_2"
+                                                placeholder="Address" readonly
+                                                value="{{ $personal_information->ref_add_2 }}"></td>
+                                        <td><input type="text" class="form-control" name="ref_mob_2"
+                                                placeholder="Tel/Mobile No." readonly
+                                                value="{{ $personal_information->ref_mob_2 }}"></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-    
+
 
                         <p>All the above information are true to my knowledge. If appointed, I am willing to abide by the
                             rules and
@@ -268,12 +280,13 @@
                             </div>
                             <div class="form-group car col-lg-4">
                                 <!-- <label for="signature-name">Name:</label>
-                                            <input type="text" id="signature-name" name="signature-name"> -->
+                                                    <input type="text" id="signature-name" name="signature-name"> -->
                             </div>
                             <div class="form-group car col-lg-4">
                                 <div style="flex: 1; display: flex; align-items: center;">
                                     <label for="name" style="margin-right: 10px; min-width: 100px;">Name:</label>
-                                <input type="text" id="signature-name" readonly placeholder="Name" name="signature_name" value="{{ $personal_information->name_2 }}">
+                                    <input type="text" id="signature-name" readonly placeholder="Name"
+                                        name="signature_name" value="{{ $personal_information->name_2 }}">
                                 </div>
                             </div>
                         </div>
@@ -289,5 +302,18 @@
 
         </div>
     </section>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            alert("Thank you for submitting.");
+
+            // Redirect to home page after a short delay
+            setTimeout(function() {
+                window.location.href = "{{ route('home') }}";
+            }, 5000); // 5000 milliseconds = 5 seconds delay
+        });
+    </script>
+
 
 @stop

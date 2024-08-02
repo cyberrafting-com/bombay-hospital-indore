@@ -287,23 +287,38 @@
                                 <!-- <label for="signature-name">Name:</label>                                 <input type="text" id="signature-name" name="signature-name-->
                             </div>
                             <div style="flex: 1; display: flex; align-items: center;">
-                                                        <label for="name" style="margin-right: 10px; min-width: 100px;">Name:</label>
-                                                        <input type="text" id="signature-name" readonly placeholder="Name"
-                                                            name="signature_name" value="{{ $personal_information->name_2 }}"
-                                                            style="border:none ; border-bottom: 1px solid gray ;  outline: none;">
+                                                            <label for="name" style="margin-right: 10px; min-width: 100px;">Name:</label>
+                                                            <input type="text" id="signature-name" readonly placeholder="Name"
+                                                                name="signature_name" value="{{ $personal_information->name_2 }}"
+                                                                style="border:none ; border-bottom: 1px solid gray ;  outline: none;">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                {{-- <div class="form-group submit-button text-center">
+                                                    {{-- <div class="form-group submit-button text-center">
                             <button type="submit"
                                 class="btn px-4 submit-button fs-6 blue-hover submit-button ms-auto mt-4">Submit</button>
                         </div> --}}
-                                            </form>
+                                                </form>
+                                            </div>
                                         </div>
+
+
+
                                     </div>
+                                </section>
 
 
 
-                                </div>
-                            </section>
+                                
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            alert("Thank you for submitting.");
+
+            // Redirect to home page after a short delay
+            setTimeout(function() {
+                window.location.href = "{{ route('home') }}";
+            }, 5000); // 5000 milliseconds = 5 seconds delay
+        });
+    </script>
+
 
 @stop

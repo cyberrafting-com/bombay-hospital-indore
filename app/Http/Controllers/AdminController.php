@@ -30,8 +30,12 @@ class AdminController extends Controller
         $personalInformations = PersonalInformation::with('educationDetails')->where('form_name', $decodedFormName)->get();
         return view('viewData', compact('personalInformations', 'form_name'));
     }
+
+    //   where('form_name', $decodedFormName): 
+    //   This adds a condition to only fetch records where the form_name column matches the decoded form name.
+    //   Method to display more details for a specific user
+
     
-    // Method to display more details for a specific user
     public function viewDetails($id)
     {
         $personalInformation = PersonalInformation::with('educationDetails')->find($id);

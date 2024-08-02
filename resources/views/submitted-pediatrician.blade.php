@@ -264,4 +264,19 @@
         </div>
     </section>
 
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            alert("Thank you for submitting.");
+
+            // Redirect to home page after a short delay
+            setTimeout(function() {
+                window.location.href = "{{ route('home') }}";
+            }, 5000); // 5000 milliseconds = 5 seconds delay
+        });
+    </script>
+
+
+
 @stop

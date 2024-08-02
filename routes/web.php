@@ -42,7 +42,7 @@ use App\Http\Controllers\AdminController;
 
 
     // Public routes (accessible without authentication)
-       Route::get('/login', [AdminController::class, 'loginForm'])->name('login');
+       Route::get('/admin', [AdminController::class, 'loginForm'])->name('login');
        Route::post('/admin_login', [AdminController::class, 'loginData'])->name('admin_login');
 
 // Protected routes (accessible only by authenticated users)

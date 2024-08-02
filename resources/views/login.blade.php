@@ -12,7 +12,7 @@
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="card" style="width: 24rem;">
             <div class="card-body">
-                <h2 class="card-title text-center mb-4">Login From</h2>
+                <h2 class="card-title text-center mb-4">Login Form</h2>
                 <form method="POST" action="{{ route('admin_login') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
